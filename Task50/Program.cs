@@ -15,8 +15,8 @@ int Prompt(string text)
 
 int[,] GetArray2d()
 {
-    int m = Prompt("Введите значение m");
-    int n = Prompt("Введите значение n");
+    int m = Prompt("Задайте количество строк");
+    int n = Prompt("Задайте количество столбцов");
     int[,] array = new int[m, n];
     for (int i = 0; i < m; i++)
     {
@@ -48,14 +48,15 @@ void GetNumber(int[,] array)
 {
     int m1 = Prompt("Введите номер строки");
     int n1 = Prompt("Введите номер столбца");
-    int number = array2d[m1, n1];
-    if(m1 <= array2d.GetLength(0) && n1 <= array2d.GetLength(1))
+    
+    if(m1 <= array.GetLength(0) && n1 <= array.GetLength(1))
     { 
+        int number = array[m1-1, n1-1];
         Console.WriteLine($"Значение ячейки: {number}"); 
     }
     else 
     {
-        Console.WriteLine("Такой ячейки не существует");
+        Console.WriteLine("Такого значения не существует");
     }
 }
 
